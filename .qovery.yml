@@ -1,15 +1,16 @@
 ---
 application:
-  name: "attendance-tracker"
-  project: "Attendance Site"
-  organization: "QoveryCommunity"
+  name: simple-example-django-with-postgresql
+  project: simple-example-django-with-postgresql
+  cloud_region: aws/eu-west-3
+  publicly_accessible: true
 databases:
-- type: "POSTGRESQL"
-  name: "attendance"
-  version: "11"
+  - type: postgresql
+    version: "11.5"
+    name: my-db
 routers:
-- name: "main-attendance-tracker"
-  routes:
-  - application_name: "attendance-tracker"
-    paths:
-    - "/*"
+  - name: main
+    routes:
+      - application_name: simple-example-django-with-postgresql
+        paths:
+          - /
